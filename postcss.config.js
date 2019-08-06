@@ -16,6 +16,7 @@ module.exports = {
       landscape: false,
       landscapeUnit: "vw",
       landscapeWidth: 568
-    }
+    },
+    "postcss-write-svg": {}
   }
 }

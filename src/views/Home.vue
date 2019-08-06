@@ -23,7 +23,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="postcss" scoped>
 /* .border_1px:before{
   content: '';
   position: absolute;
@@ -33,7 +33,7 @@ export default {
   width: 100%;
   background-color: #000;
   transform-origin: 50% 0%;
-} */
+}
 @media only screen and (-webkit-min-device-pixel-ratio:2){
     .border_1px:before{
         transform: scaleY(0.5);
@@ -43,7 +43,7 @@ export default {
     .border_1px:before{
         transform: scaleY(0.33);
     }
-}
+} */
 @svg border_1px {
   height: 2px;
   @rect {
@@ -53,7 +53,7 @@ export default {
   }
 }
 .asd{
-  height: 50vw;
+  height: 10vh;
   text-align: left;
   padding: 10vw;
   position: relative;
