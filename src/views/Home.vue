@@ -6,6 +6,7 @@
     <svg-icon  icon-class="computer" className="big" />
     <svg-icon  icon-class="computer" className="small" />
     <p style="background-color: orange">hellow world</p>
+    <button @click="sortTime()">click</button>
     <div class="asd">
       HelloWorld
     </div>
@@ -15,11 +16,60 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import { setTimeout } from 'timers'
 
 export default {
   name: 'home',
+  data () {
+    return {
+      date: []
+    }
+  },
   components: {
     HelloWorld
+  },
+  mounted () {
+    this.date.push({
+      num: 1,
+      date: new Date()
+    })
+    setTimeout(function () {
+      this.date.push({
+        num: 2,
+        date: new Date()
+      })
+    }.bind(this), 2000)
+    setTimeout(function () {
+      this.date.push({
+        num: 3,
+        date: new Date()
+      })
+    }.bind(this), 4000)
+    var a = {
+      n: 1
+    }
+    var b = a
+    a.x = a = {
+      n: 2
+    }
+    console.log(a)// {n:2}
+    console.log(a.x)// undefined
+    console.log('------------------------')
+    console.log(b)// {n:1,x:{n:2}}
+    console.log(b.x)// {n:2}
+  },
+  methods: {
+    sortTime () {
+      this.date.sort(this.sortRules)
+      console.log(this.date)
+    },
+    sortRules (a, b) {
+      if (a.date && b.date) {
+        return a.date - b.date
+      } else {
+        return 0
+      }
+    }
   }
 }
 </script>
